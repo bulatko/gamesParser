@@ -9,13 +9,13 @@ $url = $_GET['url'];
 
 $data = get_content($url);
 
-$selector1 = '#game_area_purchase > div.game_area_purchase_game_wrapper > div > div.game_purchase_action > div > div.discount_block.game_purchase_discount > div.discount_prices > div.discount_final_price';
+$selector1 = '#game_area_purchase div.game_area_purchase_game_wrapper:eq(0) div.game_purchase_price';
+$selector2 = '#game_area_purchase div.game_area_purchase_game_wrapper:eq(0) div.discount_final_price';
 
-$selector2 = '#game_area_purchase > div.game_area_purchase_game_wrapper > div > div.game_purchase_action > div > div.game_purchase_price.price';
 
 $doc = phpQuery::newDocument($data);
 
-if($doc->find($selector1)){
+if($doc->find($selector1)->text()){
     $answer = $doc->find($selector1)->text();
 } else
     $answer = $doc->find($selector2)->text();
