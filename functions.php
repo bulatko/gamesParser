@@ -18,3 +18,17 @@ function get_content($url, $data = [],$getlink = null)
     curl_close($ch);
     return $res;
 }
+
+function clearStr($string) {
+    $old_string = $string;
+    $string = strip_tags($string);
+    $string = preg_replace('/([^\pL\pN\pP\pS\pZ])|([\xC2\xA0])/u', ' ', $string);
+    $string = str_replace('  ',' ', $string);
+    $string = trim($string);
+
+    if ($string === $old_string) {
+        return $string;
+    } else {
+        return clearStr($string);
+    }
+}
