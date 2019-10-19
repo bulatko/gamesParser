@@ -1,5 +1,6 @@
 <?php
 require "bd.php";
+require "game.php";
 $ret = ['status' => false];
 if (!isset($_GET['game_name'])) {
     exit();

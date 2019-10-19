@@ -3,6 +3,8 @@
 
 class game
 {
+
+/** @var Mysqli $mysqli */
 private $mysqli;
 public $id, $name;
 
@@ -21,5 +23,12 @@ public $id, $name;
         $this->mysqli->query("insert into games values(0,'$game_name')");
         $row = mysqli_fetch_row($this->mysqli->query("select game_id from games order by game_id desc limit 1"));
         $this->id = $row[0];
+    }
+    public function delete_game(){
+        $id = $this->id;
+        $this->mysqli->query("delete from games where game_id = $id");
+    }
+    public function get_links(){
+
     }
 }
