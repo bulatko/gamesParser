@@ -5,7 +5,7 @@ header("Content-Type: text/html; charset=utf-8");
 mb_internal_encoding("UTF-8");
 /* Переменные для соединения с базой данных */
 $hostname = "localhost";
-$username = "user";
+$username = "suojzlvz_user";
 $password = "qwerty291198";
 $dbName = "suojzlvz_games";
 $mysqli = new mysqli($hostname, $username, $password, $dbName);

@@ -1,13 +1,13 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="jquery-3.4.1.js"></script>
 <script src="adder.js"></script>
 
 <?php
 
 require_once 'bd.php';
-echo "<h3>Добавить игру</h3><input type = \"text\"  name = \"game_add_name\" value =  \"Введите название игры\"> <br>" .
+echo "<h3>Добавить игру</h3><input type = \"text\"  name = \"game_add_name\" id = \"game_add_name\" value =  \"Введите название игры\"> <br>" .
     "<button id='add_game_button'>Добавить</button> <br>";
 $q = $mysqli->query("select * from games limit 0,10");
 
