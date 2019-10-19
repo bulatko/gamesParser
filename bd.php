@@ -7,7 +7,7 @@ mb_internal_encoding("UTF-8");
 $hostname = "localhost";
 $username = "user";
 $password = "qwerty291198";
-$dbName = "games";
+$dbName = "suojzlvz_games";
 $mysqli = new mysqli($hostname, $username, $password, $dbName);
 mysqli_set_charset($mysqli, 'utf8mb4');
 /* проверяем соединение */
