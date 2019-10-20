@@ -54,3 +54,7 @@ $PARSER[12] = [
     'file' => 'zaka-zaka.php',
     'name' => 'ZAKA-ZAKA'
 ];
+$PARSER[13] = [
+    'file' => 'playo.php',
+    'name' => 'PlayYo'
+];

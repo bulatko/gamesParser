@@ -1,18 +1,17 @@
-let link_add_name;
-let add_link_button;
-let game_add_name;
-let add_game_button;
-let super_checkbox;
+
 let checked = 0;
+let count;
 
 
 $(document).ready(function () {
-    super_checkbox = $('#super_checkbox');
-    game_add_name = $('#game_add_name');
-    add_game_button = $('#add_game_button');
-    link_add_name = $('#link_add_name');
-    add_link_button = $('#add_link_button');
-    add_game_button.click(
+    let super_checkbox = $('#super_checkbox');
+    let game_add_name = $('#game_add_name');
+    let add_game_button = $('#add_game_button');
+    let link_add_name = $('#link_add_name');
+    let add_link_button = $('#add_link_button');
+    let links_action_button = $('#links_action_button');
+    let links_action_select = $('#links_action_select');
+        add_game_button.click(
         function () {
             add_game(game_add_name.val());
         }
@@ -31,7 +30,10 @@ $(document).ready(function () {
 
     add_link_button.click(
         function () {
-            add_link($('#choose_site').attr('game_id'), $('#choose_site').val(), link_add_name.val());
+            if($(this).attr('disabled')!=='disabled') {
+                $(this).attr('disabled', 'disabled');
+                add_link($('#choose_site').attr('game_id'), $('#choose_site').val(), link_add_name.val());
+            }
         }
     );
     super_checkbox.click(function () {
@@ -47,7 +49,30 @@ $(document).ready(function () {
             $('body input:checkbox').prop('checked', true);
         }
 
+    });
+    links_action_button.click(function () {
+
+        if($(this).attr('disabled')!=='disabled') {
+            $(this).text('Загрузка');
+            $(this).attr('disabled', 'disabled');
+            count = $(':checkbox:checked:not(last)').length;
+            console.log(links_action_select.val());
+            $('input:checkbox:checked:not(last)').each(function () {
+                $.get('link_actions.php',
+                    {
+                        link_id: $(this).val(),
+                        action: links_action_select.val(),
+
+                    }, function (data) {
+
+                        count--;
+                        if (!count) location.reload();
+                    });
+
+            })
+        }
     })
+
 });
 
 function add_game(game_name) {

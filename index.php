@@ -24,7 +24,7 @@ if (!isset($_GET['game_id'])) {
     $game_id = $_GET['game_id'];
     $game = new game($mysqli, $game_id);
     $game_name = $game->name;
-    echo "<h3>$game_name</h3>";
+    echo "<h4><a href='$MAIN_URL'> Домой</a></h4><h3>$game_name</h3>";
     $t = '';
     for ($i = 0; $i < count($PARSER); $i++) {
         $t .= "<option value='$i'>" . $PARSER[$i]['name'] . "</option>\n";
@@ -49,9 +49,9 @@ if (!isset($_GET['game_id'])) {
     }
     if($k)echo "<br><label><input type=\"checkbox\" id='super_checkbox' >Отметить все/снять выделение</label><br>" .
         "<br>" .
-        "С отмеченными: <select>" .
+        "С отмеченными: <select id='links_action_select'>" .
         "<option value='1'>Удалить</option>" .
         "<option value='2'>Обновить</option>" .
-        "</select> <button>OK</button>";
+        "</select> <button id='links_action_button'>OK</button>";
     echo "</div>";
 }
