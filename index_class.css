@@ -7,8 +7,67 @@ body{
 }
 h3{
     color: #444;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
+h3:hover{
+    cursor: default;
+ }
 html{
 
     font-family: Arial;
+}
+.game_name{
+    margin-left: 4%;
+    width: fit-content;
+}
+.game_name:hover{
+    cursor: pointer;
+    color: #a88;
+}
+#game_add_name{
+    background: #eee;
+    color: #f62;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: solid;
+    border-color: #000;
+    border-radius: 7px;
+    font-size: 20pt;
+}
+#link_add_name{
+    background: #eee;
+    color: #f62;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: solid;
+    border-color: #000;
+    border-radius: 7px;
+    font-size: 20pt;
+}
+#choose_site{
+    background: #eee;
+    color: #f62;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: solid;
+    border-color: #000;
+    border-radius: 7px;
+    font-size: 20pt;
+}
+#add_game_button{
+    font-size: 20pt;
+    font-style: revert;
+    border-radius: 7px;
+    background: #eee;
+}
+#links{
+    width: fit-content;
+    margin-top: 30px;
+    border: solid;
+    border-width: 2px;
 }
